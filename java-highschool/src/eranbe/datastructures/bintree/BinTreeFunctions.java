@@ -1,4 +1,4 @@
-package eranbe.datastructures.exercises;
+package eranbe.datastructures.bintree;
 
 import eranbe.datastructures.*;
 

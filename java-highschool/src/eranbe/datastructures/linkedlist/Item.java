@@ -1,4 +1,4 @@
-package eranbe.datastructures.exercises;
+package eranbe.datastructures.linkedlist;
 
 public class Item {
 	private int count;

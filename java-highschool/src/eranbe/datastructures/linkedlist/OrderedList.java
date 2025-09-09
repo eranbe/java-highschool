@@ -1,4 +1,4 @@
-package eranbe.datastructures.exercises;
+package eranbe.datastructures.linkedlist;
 
 import eranbe.datastructures.Node;
 

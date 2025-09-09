@@ -1,6 +1,7 @@
-package eranbe.datastructures.exercises;
+package eranbe.datastructures.bintree;
 
 import eranbe.datastructures.*;
+import eranbe.datastructures.linkedlist.Item;
 
 public class EncodedString {
 
