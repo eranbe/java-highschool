@@ -52,15 +52,23 @@ public class RecursionExercises {
     }
 
     // 8. סכום של מערך
-    public static int sumArray(int[] arr, int index) {
+    public static int sumArray(int[] arr) {
+    	if (arr.length == 0) return 0;
+    	return sumArrayHelper(arr, 0);
+    }
+    public static int sumArrayHelper(int[] arr, int index) {
         if (index == arr.length) return 0;
-        return arr[index] + sumArray(arr, index + 1);
+        return arr[index] + sumArrayHelper(arr, index + 1);
     }
 
     // 9. מקסימום במערך
-    public static int maxInArray(int[] arr, int index) {
+    public static int maxInArray(int[] arr) {
+    	return maxInArrayHelper(arr, 0);
+    }
+
+    public static int maxInArrayHelper(int[] arr, int index) {
         if (index == arr.length - 1) return arr[index];
-        return Math.max(arr[index], maxInArray(arr, index + 1));
+        return Math.max(arr[index], maxInArrayHelper(arr, index + 1));
     }
 
     // 10. בדיקת ראשוניות
@@ -134,8 +142,8 @@ public class RecursionExercises {
         System.out.println("2 בחזקת 5: " + power(2, 5));
         System.out.println("12321 הוא פלינדרום? " + isPalindrome(12321));
         int[] arr = {1, 2, 3, 4, 5};
-        System.out.println("סכום מערך: " + sumArray(arr, 0));
-        System.out.println("מקסימום במערך: " + maxInArray(arr, 0));
+        System.out.println("סכום מערך: " + sumArray(arr));
+        System.out.println("מקסימום במערך: " + maxInArray(arr));
         System.out.println("7 הוא ראשוני? " + isPrime(7));
         System.out.println("המרת 13 לבינארי: " + toBinary(13));
         System.out.println("סכום 4 איברים של סדרה חשבונית (a=1, d=2): " + arithmeticSum(1, 2, 4));
