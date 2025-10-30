@@ -1,4 +1,4 @@
-package eranbe.bagrut.a2018;
+package eranbe.bagrut.a2018.q2;
 
 public class Vote {
 

@@ -10,11 +10,11 @@ public class Parabola {
     }
 
     public boolean contains(Point p) {
-        double expectedY = yAtX(p.getX());
+        double expectedY = value(p.getX());
         return p.getY() == expectedY;
     }
 
-    public double yAtX(double x) {
+    public double value(double x) {
     	return a * x * x + b * x + c;
     }
 
