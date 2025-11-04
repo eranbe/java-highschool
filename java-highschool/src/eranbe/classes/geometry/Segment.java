@@ -5,21 +5,30 @@ public class Segment {
     private Point end;
 
     public Segment(Point start, Point end) {
-        this.start = start;
-        this.end = end;
+        this.start = new Point(start);
+        this.end = new Point(end);
     }
 
+    public void setStart(Point p) {
+    	this.start = new Point(p);
+    }
+    
+    public void setEnd(Point p) {
+    	this.end = new Point(p);
+    }
+    
+    public Point getStart() {
+    	return new Point(this.start);
+    }
+    
+    public Point getEnd() {
+    	return new Point(this.end);
+    }
+    
     public boolean contains(Point p) {
-        Line line = start.lineTo(end);
-        if (!line.contains(p)) return false;
-
-        double minX = Math.min(start.getX(), end.getX());
-        double maxX = Math.max(start.getX(), end.getX());
-        double minY = Math.min(start.getY(), end.getY());
-        double maxY = Math.max(start.getY(), end.getY());
-
-        return (p.getX() >= minX - 1e-9 && p.getX() <= maxX + 1e-9) &&
-               (p.getY() >= minY - 1e-9 && p.getY() <= maxY + 1e-9);
+    	Ray r1 = new Ray(start, end);
+    	Ray r2 = new Ray(end, start);
+    	return r1.contains(p) && r2.contains(p);
     }
 
     @Override

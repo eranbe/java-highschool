@@ -5,10 +5,13 @@ public class Ray {
     private Point directionPoint;
 
     public Ray(Point start, Point directionPoint) {
-        this.start = start;
-        this.directionPoint = directionPoint;
+        this.start = new Point(start);
+        this.directionPoint = new Point(directionPoint);
     }
 
+    public Point getStart() {
+    	return new Point(start);
+    }
     public boolean contains(Point p) {
         Line line = start.lineTo(directionPoint);
         if (!line.contains(p)) return false;

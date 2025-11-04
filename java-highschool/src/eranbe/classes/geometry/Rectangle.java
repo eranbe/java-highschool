@@ -6,11 +6,27 @@ public class Rectangle {
     private double height;
 
     public Rectangle(Point topLeft, double width, double height) {
-        this.topLeft = topLeft;
+        this.topLeft = new Point(topLeft);
         this.width = width;
         this.height = height;
     }
 
+    public Point getTopLeft() {
+    	return new Point(topLeft);
+    }
+    
+    public Point getTopRight() {
+    	return new Point(topLeft.getX() + width, topLeft.getY());
+    }
+
+    public Point getBottomLeft() {
+    	return new Point(topLeft.getX(), topLeft.getY() - height);
+    }
+    
+    public Point getBottomRight() {
+    	return new Point(topLeft.getX() + width, topLeft.getY() - height);
+    }
+    
     public boolean contains(Point p) {
         return p.getX() >= topLeft.getX() &&
                p.getX() <= topLeft.getX() + width &&

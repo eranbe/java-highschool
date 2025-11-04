@@ -5,8 +5,16 @@ public class Circle {
     private double radius;
 
     public Circle(Point center, double radius) {
-        this.center = center;
+        this.center = new Point(center);
         this.radius = radius;
+    }
+
+    public void setCenter(Point newCenter) {
+    	this.center = new Point(newCenter);
+    }
+
+    public Point getCenter() {
+    	return new Point(this.center);
     }
 
     public boolean contains(Point p) {

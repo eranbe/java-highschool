@@ -6,7 +6,7 @@ public class Ellipse {
     private double b;
 
     public Ellipse(Point center, double a, double b) {
-        this.center = center;
+        this.center = new Point(center);
         this.a = a;
         this.b = b;
     }
