@@ -1,4 +1,4 @@
-package eranbe.classes.categoriesgame;
+package eranbe.classes.compoundclasses.categoriesgame;
 
 public class Answer {
 	private String player1Answer;

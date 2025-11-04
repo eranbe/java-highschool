@@ -1,4 +1,4 @@
-package eranbe.classes.categoriesgame;
+package eranbe.classes.compoundclasses.categoriesgame;
 
 import java.util.Random;
 import java.util.Scanner;
