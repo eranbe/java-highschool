@@ -1,5 +1,8 @@
 package eranbe.classes.compoundclasses.passport;
 
+/**
+ * see https://docs.google.com/presentation/d/18CDkTqQBFD5WivupAPVH_DIN4IyDLvW4N7UroPoy8Hg/edit?usp=sharing
+ */
 public class Passport {
 	private int pId; // מספר דרכון
 	private String name; // שם בעל הדרכון
