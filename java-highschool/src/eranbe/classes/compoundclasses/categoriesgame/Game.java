@@ -9,7 +9,10 @@ public class Game {
 	private char chr;
 	
 	public Game(String[] topics) {
-		this.topics = topics;
+		this.topics = new String[topics.length];
+		for (int i = 0; i < topics.length; i++) {
+			this.topics[i] = topics[i];
+		}
 		answers = new Answer[topics.length];
 		chr = 'a';
 	}
