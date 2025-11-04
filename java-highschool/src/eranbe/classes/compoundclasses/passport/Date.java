@@ -1,4 +1,4 @@
-package eranbe.classes.compoundclasses;
+package eranbe.classes.compoundclasses.passport;
 
 public class Date {
 	private int year;
