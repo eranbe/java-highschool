@@ -1,5 +1,8 @@
 package eranbe.classes.compoundclasses.apartmentandbuilding;
 
+/**
+ * See https://docs.google.com/document/d/1LiLxmohM8lLnGIcwSpmDDJghYUb71_zWJpjopkKdZsc/edit?usp=sharing
+ */
 public class Apartment {
 	private String familyName;
 	private int rooms;
