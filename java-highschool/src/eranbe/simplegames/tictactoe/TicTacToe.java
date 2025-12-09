@@ -43,51 +43,58 @@ class Board {
     }
 
     public boolean isWinner(char player) {
-        // Check rows
+        return isRowsWin(player) || isColumnsWin(player) || isMainDiagonalWin(player) || isSecondaryDiagonalWin(player);
+    }
+
+	public boolean isMainDiagonalWin(char player) {
         for (int i = 0; i < size; i++) {
-            boolean rowWin = true;
-            for (int j = 0; j < size; j++) {
-                if (board[i][j] != player) {
-                    rowWin = false;
-                    break;
-                }
-            }
-            if (rowWin) {
-                return true;
+            if (board[i][i] != player) {
+            	return false;
             }
         }
+        return true;
+	}
 
-        // Check columns
+	public boolean isSecondaryDiagonalWin(char player) {
+        for (int i = 0; i < size; i++) {
+            if (board[i][size - i - 1] != player) {
+                return false;
+            }
+        }
+        return true;
+	}
+
+	public boolean isColumnsWin(char player) {
+		// Check columns
         for (int j = 0; j < size; j++) {
             boolean colWin = true;
             for (int i = 0; i < size; i++) {
                 if (board[i][j] != player) {
                     colWin = false;
-                    break;
                 }
             }
             if (colWin) {
                 return true;
             }
         }
-
-        // Check diagonals
-        boolean diag1Win = true;
-        boolean diag2Win = true;
-        for (int i = 0; i < size; i++) {
-            if (board[i][i] != player) {
-                diag1Win = false;
-            }
-            if (board[i][size - i - 1] != player) {
-                diag2Win = false;
-            }
-        }
-        if (diag1Win || diag2Win) {
-            return true;
-        }
-
         return false;
-    }
+	}
+
+	public boolean isRowsWin(char player) {
+		// Check rows
+        for (int i = 0; i < size; i++) {
+            boolean rowWin = true;
+            for (int j = 0; j < size; j++) {
+                if (board[i][j] != player) {
+                    rowWin = false; 
+                }
+            }
+            if (rowWin) {
+                return true;
+            }
+        }
+        return false;
+	}
 
     public boolean makeMove(int row, int col, char player) {
         if (row < 0 || row >= size || col < 0 || col >= size || board[row][col] != EMPTY) {
