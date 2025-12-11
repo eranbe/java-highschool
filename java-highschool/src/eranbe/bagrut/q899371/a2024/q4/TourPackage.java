@@ -27,10 +27,10 @@ public class TourPackage {
 		int extraMinutes = minutes - this.maxTime;
 		int extraData  = usage - this.maxData;
 		if (extraMinutes > 0) {
-			extra += extraMinutes;
+			this.extra += extraMinutes;
 		}
 		if (extraData > 0) {
-			extra += extraData * 2;
+			this.extra += extraData * 2;
 		}
 	}
 	
