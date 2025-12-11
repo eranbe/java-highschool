@@ -142,8 +142,8 @@ public class TicTacToe {
     public void playGame() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to Tic-Tac-Toe!");
-
-        while (true) {
+        boolean gameOver = false;
+        while (!gameOver) {
             board.printBoard();
             System.out.println("Player " + currentPlayer.getSymbol() + ", enter your move (row and column: 0 to " + (board.getSize() - 1) + "): ");
             int row = scanner.nextInt();
@@ -151,22 +151,17 @@ public class TicTacToe {
 
             if (!board.makeMove(row, col, currentPlayer.getSymbol())) {
                 System.out.println("This move is not valid. Try again.");
-                continue;
-            }
-
-            if (board.isWinner(currentPlayer.getSymbol())) {
+            } else if (board.isWinner(currentPlayer.getSymbol())) {
                 board.printBoard();
                 System.out.println("Player " + currentPlayer.getSymbol() + " wins!");
-                break;
-            }
-
-            if (board.isFull()) {
+                gameOver = true;
+            } else if (board.isFull()) {
                 board.printBoard();
                 System.out.println("The game is a draw!");
-                break;
+                gameOver = true;
+            } else {
+            	switchPlayer();
             }
-
-            switchPlayer();
         }
 
         scanner.close();
