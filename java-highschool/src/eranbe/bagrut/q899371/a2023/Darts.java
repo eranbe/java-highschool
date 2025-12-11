@@ -1,4 +1,4 @@
-package eranbe.bagrut.a2023;
+package eranbe.bagrut.q899371.a2023;
 
 import java.util.*;
 public class Darts {
