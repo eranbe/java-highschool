@@ -24,16 +24,26 @@ public class Lesson {
 		}
 	}
 
+	// solution using indices
 	public static int last(Lesson[] arr) {
-		int maxId = arr[0].getId();
 		int maxIdx = 0;
 		for (int i = 1; i < arr.length; i++) {
 			if (arr[i].isLater(arr[maxIdx])) {
-				maxId = arr[i].getId();
 				maxIdx = i;
 			}
 		}
-		return maxId;
+		return arr[maxIdx].getId();
+	}
+	
+	// solution using the object
+	public static int last2(Lesson[] arr) {
+		Lesson max = arr[0];
+		for (int i = 1; i < arr.length; i++) {
+			if (arr[i].isLater(max)) {
+				max = arr[i];
+			}
+		}
+		return max.getId();
 	}
 	
 	public static int sumDuration(Lesson[] arr, int id) {
