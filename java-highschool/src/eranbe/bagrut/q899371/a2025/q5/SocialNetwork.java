@@ -4,8 +4,8 @@ public class SocialNetwork {
 	private User[] users;
 	
 	public boolean exactOne(User other) {
-		for (int i = 0; i < users.length; i++) {
-			if (users[i].mutual(other) == 1) {
+		for (int i = 0; i < this.users.length; i++) {
+			if (this.users[i].mutual(other) == 1) {
 				return true;
 			}
 		}
