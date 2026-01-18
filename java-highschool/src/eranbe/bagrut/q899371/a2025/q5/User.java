@@ -9,9 +9,9 @@ public class User {
 	public int mutual(User other) {
 		int mutualCount = 0;
 		int[] otherFriends = other.getFriends();
-		for (int i = 0; i < friends.length; i++) {
+		for (int i = 0; i < this.friends.length; i++) {
 			for (int j = 0; j < otherFriends.length; j++) {
-				if (friends[i] == otherFriends[j]) {
+				if (this.friends[i] == otherFriends[j]) {
 					mutualCount++;
 				}
 			}
