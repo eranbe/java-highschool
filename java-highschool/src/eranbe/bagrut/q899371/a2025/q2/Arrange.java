@@ -29,6 +29,8 @@ public class Arrange {
 		System.out.println();
 	}
 
+	// first solution - create to input-length arrays
+	// one for pos and one neg. copy to them, and then copy back
 	public static void arrange(int[] input) {
 		if (input == null || input.length < 2) {
 			return;
