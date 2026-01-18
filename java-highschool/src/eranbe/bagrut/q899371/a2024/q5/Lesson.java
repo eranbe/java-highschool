@@ -16,8 +16,7 @@ public class Lesson {
 	public boolean isLater(Lesson other) {
 		if (this.hh > other.hh) {
 			return true;
-		}
-		else if (this.hh < other.hh) {
+		} else if (this.hh < other.hh) {
 			return false;
 		} else {
 			return this.mm > other.mm;

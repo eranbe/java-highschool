@@ -22,7 +22,6 @@ public class TourPackage {
 		this.extra = 0;
 	}
 	
-	
 	public void setExtra(int minutes, int usage) {
 		int extraMinutes = minutes - this.maxTime;
 		int extraData  = usage - this.maxData;
