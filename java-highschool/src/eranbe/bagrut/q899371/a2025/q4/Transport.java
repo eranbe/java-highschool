@@ -8,21 +8,21 @@ public class Transport {
 
 	// (א)
 	public Transport(String name, int num, int day) {
-		setName(name);
-		setNum(num);
-		setDay(day);
-		setToSchool(true);
+		this.name = name;
+		this.num = num;
+		this.day = day;
+		this.toSchool = true;
 	}
 	
 	// (ב)
 	public Transport(int num) {
-		setName("Aviv");
-		setDay(4);
+		this.name = "Aviv";
+		this.day = 4;
 		if (num < 1 || num > 50) {
 			num = 1;
 		}
-		setNum(num);
-		setToSchool(false);
+		this.num = num;
+		this.toSchool = false;
 	}
 	
 	// (ג)
@@ -50,25 +50,13 @@ public class Transport {
 	public String getName() {
 		return name;
 	}
-	public void setName(String name) {
-		this.name = name;
-	}
 	public boolean isToSchool() {
 		return toSchool;
-	}
-	public void setToSchool(boolean toSchool) {
-		this.toSchool = toSchool;
 	}
 	public int getNum() {
 		return num;
 	}
-	public void setNum(int num) {
-		this.num = num;
-	}
 	public int getDay() {
 		return day;
-	}
-	public void setDay(int day) {
-		this.day = day;
 	}
 }
