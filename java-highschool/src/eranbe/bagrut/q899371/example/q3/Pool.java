@@ -34,7 +34,7 @@ public class Pool {
 		int[] under12 = { 0, 0, 0 };
 		int[] under16 = { 1, 0, 0 };
 		int[] under18 = { 1, 1, 0 };
-		int[] rest = { 1, 1, 1 };
+		int[] rest    = { 1, 1, 1 };
 		if (age < 12) {
 			return under12;
 		} else if (age < 16) {
@@ -45,6 +45,20 @@ public class Pool {
 			return rest;
 		}
 	}
+	
+	public static int[] checkAge3(int age) {
+		int[] result = new int[3];
+		if (age >= 12) {
+			result[0] = 1;
+		} 
+		if (age >= 16) {
+			result[1] = 1;
+		} 
+		if (age >= 18) {
+			result[2] = 1;
+		}
+		return result;		
+	}
 
 	public static void count() {
 		Scanner in = new Scanner(System.in);
@@ -52,7 +66,7 @@ public class Pool {
 		System.out.println("Enter age: ");
 		int age = in.nextInt();
 		int[] ageCheckResult = checkAge(age);
-		while (canEnter(ageCheckResult)) {
+		while (canEnter(ageCheckResult)) { // or age >= 12
 			for (int i = 0; i < counts.length; i++) {
 				counts[i] += ageCheckResult[i];
 			}
@@ -63,7 +77,10 @@ public class Pool {
 		System.out.println(counts[0] + "," + counts[1] + "," + counts[2]);
 	}
 
-	private static boolean canEnter(int[] ageCheckResult) {
+	/**
+	 * Check that there is at least one thing the visitor can use.
+	 */
+	public static boolean canEnter(int[] ageCheckResult) {
 		for (int i = 0; i < ageCheckResult.length; i++) {
 			if (ageCheckResult[i] != 0)
 				return true;
