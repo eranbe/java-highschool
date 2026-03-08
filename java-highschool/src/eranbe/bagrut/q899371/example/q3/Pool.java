@@ -5,8 +5,7 @@ import java.util.Scanner;
 public class Pool {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		count();
 	}
 	
 	public static int[] checkAge(int age) {
@@ -54,9 +53,9 @@ public class Pool {
 		int age = in.nextInt();
 		int[] ageCheckResult = checkAge(age);
 		while (canEnter(ageCheckResult)) {
-			counts[0] += ageCheckResult[0];
-			counts[1] += ageCheckResult[1];
-			counts[2] += ageCheckResult[2];
+			for (int i = 0; i < counts.length; i++) {
+				counts[i] += ageCheckResult[i];
+			}
 			System.out.println("Enter age: ");
 			age = in.nextInt();
 			ageCheckResult = checkAge(age);
