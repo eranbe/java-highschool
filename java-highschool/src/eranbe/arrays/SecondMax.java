@@ -7,9 +7,9 @@ public class SecondMax {
         Random rnd = new Random();
         final int SIZE = 20; // קביעת אורך המערך ל-20
         int[] arr = new int[SIZE];
-        // מילוי המערך במספרים אקראיים בין 1 ל-100
+        // מילוי המערך במספרים אקראיים בין 1 ל-1000
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = rnd.nextInt(100) + 1;
+            arr[i] = rnd.nextInt(1000) + 1;
         }
         // הדפסת המערך המוגרל
         System.out.println("המערך בגודל 20 שהוגרל:");
@@ -29,7 +29,7 @@ public class SecondMax {
             if (num > max) {
                 secondMax = max;
                 max = num;
-            } else if (num > secondMax && num < max) {
+            } else if (num > secondMax) {
                 secondMax = num;
             }
         }
