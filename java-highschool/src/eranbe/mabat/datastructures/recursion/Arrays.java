@@ -200,7 +200,13 @@ public class Arrays {
     // 29.
     public static boolean isSparseMatrix(int[][] mat) {
     	return isSparseMatrix(mat, 0);
-    	//return isSparseRow(mat[0], 0, 0) && isSparseMatrix(mat, 1);
+    }
+    
+    public static boolean isSparseMatrix(int[][] mat, int row) {
+    	if (row == mat.length) {
+    		return true;
+    	}
+    	return isSparseRow(mat[row], 0, row) && isSparseMatrix(mat, row+1);
     }
     
     public static boolean isSparseRow(int[] arr, int i, int row) {
@@ -216,26 +222,9 @@ public class Arrays {
     	return isSparseRow(arr, i+1, row);
     }
     
-    public static boolean isSparseMatrix(int[][] mat, int row) {
-    	if (row == mat.length) {
-    		return true;
-    	}
-    	return isSparseRow(mat[row], 0, row) && isSparseMatrix(mat, row+1);
-    }
-    
     // 30.
     public static int numRowsHaveNum(int[][] mat, int num) {
     	return numRowsHaveNum(mat, num, 0);
-    }
-    
-    public static boolean hasNum(int[] arr, int num, int i) {
-    	if (i == arr.length ) {
-    		return false;
-    	}
-    	if (arr[i] == num) {
-    		return true;
-    	}
-    	return hasNum(arr, num, i+1);
     }
     
     public static int numRowsHaveNum(int[][] mat, int num, int row) {
@@ -248,5 +237,15 @@ public class Arrays {
     	}
     	return result + numRowsHaveNum(mat, num, row+1);
     }
+    public static boolean hasNum(int[] arr, int num, int i) {
+    	if (i == arr.length ) {
+    		return false;
+    	}
+    	if (arr[i] == num) {
+    		return true;
+    	}
+    	return hasNum(arr, num, i+1);
+    }
+    
 }
 
