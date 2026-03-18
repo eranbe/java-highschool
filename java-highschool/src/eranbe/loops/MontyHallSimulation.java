@@ -39,13 +39,7 @@ public class MontyHallSimulation {
     			}
     		}
 
-            /*
-            // מציאת דלת עם עז שלא נבחרה
-            int revealedDoor = (playerChoice + 1) % 3;
-            if (revealedDoor == carDoor) {
-                revealedDoor = (playerChoice + 2) % 3;
-            }
-            */
+            // אם השחקן מחליף, הוא בוחר את הדלת שלא נבחרה ולא נחשפה
     		int switchedChoice;
     		if (playerChoice == 0) {
     			if (revealedDoor == 1) {
@@ -66,8 +60,6 @@ public class MontyHallSimulation {
     				switchedChoice = 0;
     			}
     		}
-            // אם השחקן מחליף, הוא בוחר את הדלת שלא נבחרה ולא נחשפה
-            //int switchedChoice = 3 - playerChoice - revealedDoor;
             
             // בדיקת הצלחה
             if (switchedChoice == carDoor) {
