@@ -15,14 +15,59 @@ public class MontyHallSimulation {
             int carDoor = random.nextInt(3); // הדלת עם המכונית
             int playerChoice = random.nextInt(3); // הבחירה הראשונית של השחקן
             
+            int[] doors = new int[3];
+            doors[carDoor] = 1;
+           
+    		int revealedDoor;
+    		if (playerChoice == 0) {
+    			if (doors[1] == 1) {
+    				revealedDoor = 2;
+    			} else {
+    				revealedDoor = 1;
+    			}
+    		} else if (playerChoice == 1) {
+    			if (doors[2] == 1) {
+    				revealedDoor = 0;
+    			} else {
+    				revealedDoor = 2;
+    			}
+    		} else {// player chose door 2
+    			if (doors[0] == 1) {
+    				revealedDoor = 1;
+    			} else {
+    				revealedDoor = 0;
+    			}
+    		}
+
+            /*
             // מציאת דלת עם עז שלא נבחרה
             int revealedDoor = (playerChoice + 1) % 3;
             if (revealedDoor == carDoor) {
                 revealedDoor = (playerChoice + 2) % 3;
             }
-            
+            */
+    		int switchedChoice;
+    		if (playerChoice == 0) {
+    			if (revealedDoor == 1) {
+    				switchedChoice = 2;
+    			} else {
+    				switchedChoice = 1;
+    			}
+    		} else if (playerChoice == 1) {
+    			if (revealedDoor == 2) {
+    				switchedChoice = 0;
+    			} else {
+    				switchedChoice = 2;
+    			}
+    		} else { // playerChoice == 2
+    			if (revealedDoor == 0) {
+    				switchedChoice = 1;
+    			} else {
+    				switchedChoice = 0;
+    			}
+    		}
             // אם השחקן מחליף, הוא בוחר את הדלת שלא נבחרה ולא נחשפה
-            int switchedChoice = 3 - playerChoice - revealedDoor;
+            //int switchedChoice = 3 - playerChoice - revealedDoor;
             
             // בדיקת הצלחה
             if (switchedChoice == carDoor) {
