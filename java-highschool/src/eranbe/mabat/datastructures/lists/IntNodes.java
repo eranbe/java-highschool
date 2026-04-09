@@ -1,5 +1,6 @@
 package eranbe.mabat.datastructures.lists;
 
+import static eranbe.mabat.datastructures.lists.ListUtils.contains;
 import static eranbe.mabat.datastructures.lists.ListUtils.createIntList;
 import static eranbe.mabat.datastructures.lists.ListUtils.printIntList;
 
@@ -169,7 +170,7 @@ public class IntNodes {
 		Random rnd = new Random();
 		while (count < 50) {
 			int num = rnd.nextInt(99-10+1)+10;
-			if (countNumSequences(head, num) == 0) {
+			if (!contains(head, num)) {
 				head = new IntNode(num, head);
 				count++;
 			}
@@ -181,7 +182,7 @@ public class IntNodes {
 	public static IntNode buildComplementary2DigitList(IntNode head) {
 		IntNode result = null;
 		for (int i = 99; i >= 10; i--) {
-			if (countNumSequences(head, i) == 0) {
+			if (!contains(head, i)) {
 				result = new IntNode(i, result);
 			}
 		}
@@ -216,7 +217,7 @@ public class IntNodes {
 	public static IntNode unique(IntNode head) {
 		IntNode result = null;
 		while (head != null) {
-			if (countNumSequences(result, head.getValue()) == 0) {
+			if (!contains(result, head.getValue())) {
 				result = new IntNode(head.getValue(), result);
 			}
 			head = head.getNext();
@@ -265,7 +266,7 @@ public class IntNodes {
 		IntNode head = dummy;
 		int removeCount = 0;
 		while (head.hasNext()) {
-			if (countNumSequences(chain2, head.getNext().getValue()) > 0) {
+			if (contains(chain2, head.getNext().getValue())) {
 				head.setNext(head.getNext().getNext());
 				removeCount++;
 			} else {

@@ -27,4 +27,30 @@ public class ListUtils {
 		}
 		System.out.println();
 	}
+	
+	public static boolean contains(IntNode head, int value) {
+		while (head != null) {
+			if (head.getValue() == value) {
+				return true;
+			}
+			head = head.getNext();
+		}
+		return false;
+	}
+
+	public static boolean safeAddNext(IntNode curr, IntNode next) {
+		if (curr == null)
+			return false;
+		if (next == null && curr.getNext() != null)
+			return false;
+		next.setNext(curr.getNext());
+		return true;
+	}
+
+	public static boolean safeRemoveNext(IntNode node) {
+		if (node == null || node.getNext() != null)
+			return false;
+		node.setNext(node.getNext().getNext());
+		return true; 
+	}
 }
