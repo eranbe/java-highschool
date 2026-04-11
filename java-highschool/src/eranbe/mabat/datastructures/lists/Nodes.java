@@ -1,7 +1,8 @@
 package eranbe.mabat.datastructures.lists;
 
 import static eranbe.mabat.datastructures.lists.ListUtils.contains;
-
+import static eranbe.mabat.datastructures.lists.ListUtils.createList;
+import static eranbe.mabat.datastructures.lists.ListUtils.printList;
 import java.util.Scanner;
 
 import eranbe.datastructures.Node;
@@ -10,8 +11,9 @@ public class Nodes {
 
 	public static void main(String[] args) {
 		//buildAndPrintNumOccurrencesPerCharEx15();
-		buildAndPrintNumOccurrencesPerCharEx16();
-
+		//buildAndPrintNumOccurrencesPerCharEx16();
+		Character[] mathExp = { '1', '+', '2', '3', '*', '4' };
+		printList(calcMathExpressions(createList(mathExp)));
 	}
 
 	// 15a.
@@ -67,5 +69,28 @@ public class Nodes {
 			node = new Node<Character>(input.charAt(i), node);
 		}
 		printNumOccurences(node);
+	}
+	
+	// 17.
+	public static Node<Integer> calcMathExpressions(Node<Character> head) {
+		if (head == null) {
+			return null;
+		}
+		int operand1 = head.getValue() - '0';
+		head = head.getNext();
+		char operator = head.getValue();
+		head = head.getNext();
+		int operand2 = head.getValue() - '0';
+		int value = 0;
+		if (operator == '+') {
+			value = operand1 + operand2;
+		} else if (operator == '-') {
+			value = operand1 - operand2;
+		} else if (operator == '*') {
+			value = operand1 * operand2;
+		} else if (operator == '/') {
+			value = operand1 / operand2;
+		}
+		return new Node<Integer>(value, calcMathExpressions(head.getNext()));
 	}
 }
