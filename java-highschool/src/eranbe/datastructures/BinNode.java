@@ -50,4 +50,8 @@ public class BinNode<T> {
 	public String toString() {
 		return value.toString();
 	}
+	
+	public static <T> boolean isLeaf(BinNode<T> t) {
+		return t.getLeft() == null && t.getRight() == null;
+	}
 }
