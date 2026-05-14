@@ -3,7 +3,7 @@ package eranbe.arrays;
 import java.util.Random;
 
 /**
- * See https://youtu.be/A5w-dEgIU1M?si=zsMcRbUKxEeZ4mRQ&t=560 (until 10:30)
+ * See https://youtu.be/A5w-dEgIU1M?si=zsMcRbUKxEeZ4mRQ&t=562 (until 10:30)
  */
 public class GaltonBoard {
     public static void main(String[] args) {
