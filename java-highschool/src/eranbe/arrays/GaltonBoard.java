@@ -2,6 +2,9 @@ package eranbe.arrays;
 
 import java.util.Random;
 
+/**
+ * See https://youtu.be/A5w-dEgIU1M?si=zsMcRbUKxEeZ4mRQ&t=560 (until 10:30)
+ */
 public class GaltonBoard {
     public static void main(String[] args) {
         // הרצת הסימולציה עם פרמטרים משתנים
@@ -12,7 +15,7 @@ public class GaltonBoard {
         int[] simulation2 = runGaltonSimulation(20, 1000);
         System.out.println("--- לוח של  20 שורות ---");
         printBins(simulation2);
-}
+    }
 
     /**
      * פעולה גנרית להרצת סימולציית לוח גלטון
