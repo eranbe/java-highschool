@@ -38,7 +38,7 @@ public class Order {
     }
 
     public static int[] sumQuantity(Order[] allOrders) {
-        int[] result = new int[100];
+        int[] result = new int[100]; // in Java, all cells initialized to zero.
         for (int i = 0; i < allOrders.length; i++) {
             Order order = allOrders[i];
             result[order.getProductID()] += order.getQuantity();
